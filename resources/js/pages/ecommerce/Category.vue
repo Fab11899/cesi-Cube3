@@ -136,7 +136,7 @@
                                 <div class="flex h-16 items-center justify-between">
                                     <!-- Logo (lg+) -->
                                     <div class="hidden lg:flex lg:items-center">
-                                        <a href="#">
+                                        <a href="/">
                                             <span class="sr-only">Your Company</span>
                                             <img class="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="" />
                                         </a>
@@ -223,7 +223,7 @@
                                     </div>
 
                                     <!-- Logo (lg-) -->
-                                    <a href="#" class="lg:hidden">
+                                    <a href="/" class="lg:hidden">
                                         <span class="sr-only">Your Company</span>
                                         <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="" class="h-8 w-auto" />
                                     </a>
@@ -249,7 +249,7 @@
                                             <span class="mx-4 h-6 w-px bg-gray-200 lg:mx-6" aria-hidden="true" />
 
                                             <div class="flow-root">
-                                                <a href="#" class="group -m-2 flex items-center p-2">
+                                                <a href="cart" class="group -m-2 flex items-center p-2">
                                                     <ShoppingCartIcon class="size-6 shrink-0 text-gray-400 group-hover:text-gray-500" aria-hidden="true" />
                                                     <span class="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
                                                     <span class="sr-only">items in cart, view bag</span>

@@ -152,7 +152,7 @@
                         </PopoverGroup>
 
                         <!-- Logo -->
-                        <a href="#" class="flex">
+                        <a href="/" class="flex">
                             <span class="sr-only">Your Company</span>
                             <img class="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="" />
                         </a>
@@ -178,7 +178,7 @@
 
                             <!-- Cart -->
                             <div class="ml-4 flow-root lg:ml-6">
-                                <a href="#" class="group -m-2 flex items-center p-2">
+                                <a href="cart" class="group -m-2 flex items-center p-2">
                                     <ShoppingBagIcon class="size-6 shrink-0 text-gray-400 group-hover:text-gray-500" aria-hidden="true" />
                                     <span class="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
                                     <span class="sr-only">items in cart, view bag</span>
@@ -397,7 +397,6 @@ const loadCartProducts = async () => {
 const removeFromCart = async (productId) => {
     try {
         const response = await axios.delete(`/api/cart/remove/${productId}`)
-        console.log('Produit supprimé, nouveau panier :', response.data.cart)
         alert('Produit retiré du panier !')
         products.value = response.data.cart
         await loadCartProducts() // ← recharge tout le panier
@@ -417,19 +416,19 @@ const navigation = {
             featured: [
                 {
                     name: 'New Arrivals',
-                    href: '#',
+                    href: 'category',
                     imageSrc: 'https://tailwindcss.com/plus-assets/img/ecommerce-images/mega-menu-category-01.jpg',
                     imageAlt: 'Models sitting back to back, wearing Basic Tee in black and bone.',
                 },
                 {
                     name: 'Basic Tees',
-                    href: '#',
+                    href: 'category',
                     imageSrc: 'https://tailwindcss.com/plus-assets/img/ecommerce-images/mega-menu-category-02.jpg',
                     imageAlt: 'Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.',
                 },
                 {
                     name: 'Accessories',
-                    href: '#',
+                    href: 'category',
                     imageSrc: 'https://tailwindcss.com/plus-assets/img/ecommerce-images/mega-menu-category-03.jpg',
                     imageAlt: 'Model wearing minimalist watch with black wristband and white watch face.',
                 },
@@ -440,23 +439,23 @@ const navigation = {
                         id: 'shoes',
                         name: 'Shoes & Accessories',
                         items: [
-                            { name: 'Sneakers', href: '#' },
-                            { name: 'Boots', href: '#' },
-                            { name: 'Flats', href: '#' },
-                            { name: 'Sandals', href: '#' },
-                            { name: 'Heels', href: '#' },
-                            { name: 'Socks', href: '#' },
+                            { name: 'Sneakers', href: 'category' },
+                            { name: 'Boots', href: 'category' },
+                            { name: 'Flats', href: 'category' },
+                            { name: 'Sandals', href: 'category' },
+                            { name: 'Heels', href: 'category' },
+                            { name: 'Socks', href: 'category' },
                         ],
                     },
                     {
                         id: 'collection',
                         name: 'Shop Collection',
                         items: [
-                            { name: 'Everything', href: '#' },
-                            { name: 'Core', href: '#' },
-                            { name: 'New Arrivals', href: '#' },
-                            { name: 'Sale', href: '#' },
-                            { name: 'Accessories', href: '#' },
+                            { name: 'Everything', href: 'category' },
+                            { name: 'Core', href: 'category' },
+                            { name: 'New Arrivals', href: 'category' },
+                            { name: 'Sale', href: 'category' },
+                            { name: 'Accessories', href: 'category' },
                         ],
                     },
                 ],
@@ -465,24 +464,24 @@ const navigation = {
                         id: 'clothing',
                         name: 'All Clothing',
                         items: [
-                            { name: 'Basic Tees', href: '#' },
-                            { name: 'Artwork Tees', href: '#' },
-                            { name: 'Tops', href: '#' },
-                            { name: 'Bottoms', href: '#' },
-                            { name: 'Swimwear', href: '#' },
-                            { name: 'Underwear', href: '#' },
+                            { name: 'Basic Tees', href: 'category' },
+                            { name: 'Artwork Tees', href: 'category' },
+                            { name: 'Tops', href: 'category' },
+                            { name: 'Bottoms', href: 'category' },
+                            { name: 'Swimwear', href: 'category' },
+                            { name: 'Underwear', href: 'category' },
                         ],
                     },
                     {
                         id: 'accessories',
                         name: 'All Accessories',
                         items: [
-                            { name: 'Watches', href: '#' },
-                            { name: 'Wallets', href: '#' },
-                            { name: 'Bags', href: '#' },
-                            { name: 'Sunglasses', href: '#' },
-                            { name: 'Hats', href: '#' },
-                            { name: 'Belts', href: '#' },
+                            { name: 'Watches', href: 'category' },
+                            { name: 'Wallets', href: 'category' },
+                            { name: 'Bags', href: 'category' },
+                            { name: 'Sunglasses', href: 'category' },
+                            { name: 'Hats', href: 'category' },
+                            { name: 'Belts', href: 'category' },
                         ],
                     },
                 ],
@@ -491,11 +490,11 @@ const navigation = {
                         id: 'brands',
                         name: 'Brands',
                         items: [
-                            { name: 'Full Nelson', href: '#' },
-                            { name: 'My Way', href: '#' },
-                            { name: 'Re-Arranged', href: '#' },
-                            { name: 'Counterfeit', href: '#' },
-                            { name: 'Significant Other', href: '#' },
+                            { name: 'Full Nelson', href: 'category' },
+                            { name: 'My Way', href: 'category' },
+                            { name: 'Re-Arranged', href: 'category' },
+                            { name: 'Counterfeit', href: 'category' },
+                            { name: 'Significant Other', href: 'category' },
                         ],
                     },
                 ],
@@ -507,21 +506,21 @@ const navigation = {
             featured: [
                 {
                     name: 'Accessories',
-                    href: '#',
+                    href: 'category',
                     imageSrc: 'https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-03-category-01.jpg',
                     imageAlt:
                         'Wooden shelf with gray and olive drab green baseball caps, next to wooden clothes hanger with sweaters.',
                 },
                 {
                     name: 'New Arrivals',
-                    href: '#',
+                    href: 'category',
                     imageSrc:
                         'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg',
                     imageAlt: 'Drawstring top with elastic loop closure and textured interior padding.',
                 },
                 {
                     name: 'Artwork Tees',
-                    href: '#',
+                    href: 'category',
                     imageSrc: 'https://tailwindcss.com/plus-assets/img/ecommerce-images/category-page-02-image-card-06.jpg',
                     imageAlt:
                         'Three shirts in gray, white, and blue arranged on table with same line drawing of hands and shapes overlapping on front of shirt.',
@@ -533,20 +532,20 @@ const navigation = {
                         id: 'shoes',
                         name: 'Shoes & Accessories',
                         items: [
-                            { name: 'Sneakers', href: '#' },
-                            { name: 'Boots', href: '#' },
-                            { name: 'Sandals', href: '#' },
-                            { name: 'Socks', href: '#' },
+                            { name: 'Sneakers', href: 'category' },
+                            { name: 'Boots', href: 'category' },
+                            { name: 'Sandals', href: 'category' },
+                            { name: 'Socks', href: 'category' },
                         ],
                     },
                     {
                         id: 'collection',
                         name: 'Shop Collection',
                         items: [
-                            { name: 'Everything', href: '#' },
-                            { name: 'Core', href: '#' },
-                            { name: 'New Arrivals', href: '#' },
-                            { name: 'Sale', href: '#' },
+                            { name: 'Everything', href: 'category' },
+                            { name: 'Core', href: 'category' },
+                            { name: 'New Arrivals', href: 'category' },
+                            { name: 'Sale', href: 'category' },
                         ],
                     },
                 ],
@@ -555,23 +554,23 @@ const navigation = {
                         id: 'clothing',
                         name: 'All Clothing',
                         items: [
-                            { name: 'Basic Tees', href: '#' },
-                            { name: 'Artwork Tees', href: '#' },
-                            { name: 'Pants', href: '#' },
-                            { name: 'Hoodies', href: '#' },
-                            { name: 'Swimsuits', href: '#' },
+                            { name: 'Basic Tees', href: 'category' },
+                            { name: 'Artwork Tees', href: 'category' },
+                            { name: 'Pants', href: 'category' },
+                            { name: 'Hoodies', href: 'category' },
+                            { name: 'Swimsuits', href: 'category' },
                         ],
                     },
                     {
                         id: 'accessories',
                         name: 'All Accessories',
                         items: [
-                            { name: 'Watches', href: '#' },
-                            { name: 'Wallets', href: '#' },
-                            { name: 'Bags', href: '#' },
-                            { name: 'Sunglasses', href: '#' },
-                            { name: 'Hats', href: '#' },
-                            { name: 'Belts', href: '#' },
+                            { name: 'Watches', href: 'category' },
+                            { name: 'Wallets', href: 'category' },
+                            { name: 'Bags', href: 'category' },
+                            { name: 'Sunglasses', href: 'category' },
+                            { name: 'Hats', href: 'category' },
+                            { name: 'Belts', href: 'category' },
                         ],
                     },
                 ],
@@ -580,10 +579,10 @@ const navigation = {
                         id: 'brands',
                         name: 'Brands',
                         items: [
-                            { name: 'Re-Arranged', href: '#' },
-                            { name: 'Counterfeit', href: '#' },
-                            { name: 'Full Nelson', href: '#' },
-                            { name: 'My Way', href: '#' },
+                            { name: 'Re-Arranged', href: 'category' },
+                            { name: 'Counterfeit', href: 'category' },
+                            { name: 'Full Nelson', href: 'category' },
+                            { name: 'My Way', href: 'category' },
                         ],
                     },
                 ],
@@ -591,8 +590,8 @@ const navigation = {
         },
     ],
     pages: [
-        { name: 'Company', href: '#' },
-        { name: 'Stores', href: '#' },
+        { name: 'Company', href: 'category' },
+        { name: 'Stores', href: 'category' },
     ],
 }
 /*const products = [
@@ -633,11 +632,11 @@ const policies = [
 ]
 const footerNavigation = {
     products: [
-        { name: 'Bags', href: '#' },
-        { name: 'Tees', href: '#' },
-        { name: 'Objects', href: '#' },
-        { name: 'Home Goods', href: '#' },
-        { name: 'Accessories', href: '#' },
+        { name: 'Bags', href: 'category' },
+        { name: 'Tees', href: 'category' },
+        { name: 'Objects', href: 'category' },
+        { name: 'Home Goods', href: 'category' },
+        { name: 'Accessories', href: 'category' },
     ],
     company: [
         { name: 'Who we are', href: '#' },
