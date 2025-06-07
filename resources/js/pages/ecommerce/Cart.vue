@@ -1,8 +1,4 @@
 <template>
-    <div v-if="loading">
-        Chargement en cours...
-    </div>
-    <div v-else-if="products">
     <div class="bg-white">
         <!-- Mobile menu -->
         <TransitionRoot as="template" :show="open">
@@ -343,10 +339,6 @@
                 </div>
             </div>
         </footer>
-    </div>
-    </div>
-    <div v-else>
-        Produit introuvable.
     </div>
 </template>
 
