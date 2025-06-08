@@ -34,6 +34,8 @@ jobs:
       run: php artisan migrate --seed
     - name: Setup Node.js environment
       uses: actions/setup-node@v3.9.1
+    - name: Npm install
+      run: npm install
     - name: Start npm
       run: npm run dev
     - name: Start artisan
