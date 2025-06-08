@@ -36,8 +36,8 @@ test('returns a successful response /product/4', function () {
     $response->assertStatus(200);
 });
 
-test('returns a successful response /product/5', function () {
-    $response = $this->get('/product/5');
+test('returns a successful response api/product/5', function () {
+    $response = $this->get('api/product/5');
 
     $response->assertStatus(200);
 });
