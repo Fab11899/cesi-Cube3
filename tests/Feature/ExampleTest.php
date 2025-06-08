@@ -36,6 +36,12 @@ test('returns a successful response /product/4', function () {
     $response->assertStatus(200);
 });
 
+test('returns a successful response api/products', function () {
+    $response = $this->get('api/products');
+
+    $response->assertStatus(200);
+});
+
 test('returns a successful response api/product/1', function () {
     $response = $this->get('api/product/1');
 
