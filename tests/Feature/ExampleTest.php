@@ -17,3 +17,27 @@ test('returns a successful response /product/1', function () {
 
     $response->assertStatus(200);
 });
+
+test('returns a successful response /product/2', function () {
+    $response = $this->get('/product/2');
+
+    $response->assertStatus(200);
+});
+
+test('returns a successful response /product/3', function () {
+    $response = $this->get('/product/3');
+
+    $response->assertStatus(200);
+});
+
+test('returns a successful response /product/4', function () {
+    $response = $this->get('/product/4');
+
+    $response->assertStatus(200);
+});
+
+test('returns a successful response /product/5', function () {
+    $response = $this->get('/product/5');
+
+    $response->assertStatus(200);
+});
