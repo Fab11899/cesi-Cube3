@@ -37,7 +37,7 @@ jobs:
     - name: Npm install
       run: npm install
     - name: Start npm
-      run: npm run dev
+      run: npm run build
     - name: Start artisan
       run : php artisan serve
     
