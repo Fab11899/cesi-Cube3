@@ -42,7 +42,7 @@ test('returns a successful response api/products', function () {
     $response->assertStatus(200);
 });
 
-test('returns a successful response api/products', function () {
+test('returns a successful response api/cart', function () {
     $response = $this->get('api/cart');
 
     $response->assertStatus(200);
