@@ -39,5 +39,5 @@ jobs:
     - name: Start npm
       run: npm run build
     - name: Start artisan
-      run : php artisan serve
+      run : php artisan test
     
