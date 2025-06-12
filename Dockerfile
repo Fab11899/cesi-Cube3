@@ -1,6 +1,8 @@
 # Étape 1 : Backend PHP + Node.js
 FROM php:8.2-fpm
 
+RUN mv .env.example .env
+
 # Installer dépendances système et Node.js
 RUN apt-get update && apt-get install -y \
     libonig-dev \
