@@ -33,8 +33,7 @@ ADD .env.example .env
 RUN composer install
 
 # Installer dépendances Node (frontend Vite)
-WORKDIR /var/www/html
-RUN cd /var/www/html && npm install
+RUN npm install
 
 # Créer fichier DB SQLite
 RUN mkdir -p database && touch database/database.sqlite
