@@ -1,7 +1,5 @@
 # Minikube
 
-## Installation
-
 ## Lancement
 
 Démarrer le cluster :
@@ -19,6 +17,8 @@ Démarrer le service :
 ```
 minikube service breizhsport-service
 ```
+
+Après avoir tapé la commande précédente minikube indique l'url d'accès (normalement *192.168.49.2:30000*)
 
 ## Suppression
 
