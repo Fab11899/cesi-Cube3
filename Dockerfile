@@ -1,5 +1,5 @@
 # Étape 1 : Backend PHP + Node.js
-FROM php:8.2-fp
+FROM php:8.2-fpm
 
 # Installer dépendances système et Node.js
 RUN apt-get update && apt-get install -y \
