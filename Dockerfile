@@ -27,8 +27,6 @@ WORKDIR /var/www/html
 # Copier tous les fichiers
 COPY . .
 
-ADD .env.example .env
-
 # Installer dépendances PHP
 RUN composer install
 
