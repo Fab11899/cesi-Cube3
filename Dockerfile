@@ -26,7 +26,7 @@ WORKDIR /var/www/html
 
 # Copier tous les fichiers
 COPY . .
-
+ 
 # Installer dépendances PHP
 RUN composer install
 
