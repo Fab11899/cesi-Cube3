@@ -1,7 +1,5 @@
 # Étape 1 : Backend PHP + Node.js
-FROM php:8.2-fpm
-
-RUN mv .env.example .env
+FROM php:8.2-fp
 
 # Installer dépendances système et Node.js
 RUN apt-get update && apt-get install -y \
@@ -28,6 +26,8 @@ WORKDIR /var/www/html
 
 # Copier tous les fichiers
 COPY . .
+
+RUN mv .env.example .env
 
 # Installer dépendances PHP
 RUN composer install
