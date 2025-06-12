@@ -1,6 +1,7 @@
+# Étape 1 : Backend PHP + Node.js
 FROM php:8.2-fpm
 
-# Installer les dépendances système
+# Installer dépendances système et Node.js
 RUN apt-get update && apt-get install -y \
     libonig-dev \
     libxml2-dev \
@@ -11,35 +12,37 @@ RUN apt-get update && apt-get install -y \
     sqlite3 \
     libsqlite3-dev \
     npm \
-    nodejs
+    nodejs \
+    && apt-get clean
 
-# Installer les extensions PHP
+# Installer extensions PHP
 RUN docker-php-ext-install pdo pdo_sqlite
 
 # Installer Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Définir le dossier de travail
+# Créer le dossier de travail
 WORKDIR /var/www/html
 
-# Copier le code de l'application
+# Copier tous les fichiers
 COPY . .
 
-# Installer les dépendances PHP **après** la copie
+# Installer dépendances PHP
 RUN composer install
 
-# Créer le fichier SQLite vide si nécessaire
+# Installer dépendances Node (frontend Vite)
+WORKDIR /var/www/html
+RUN cd /var/www/html && npm install
+
+# Créer fichier DB SQLite
 RUN mkdir -p database && touch database/database.sqlite
 
-# Donner les bonnes permissions
-RUN chown -R www-data:www-data /var/www/html \
-    && chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/database
+# Fixer les permissions nécessaires à Laravel
+RUN chmod -R 775 storage bootstrap/cache database \
+    && chown -R www-data:www-data .
 
-# Exposer le port
-EXPOSE 8000
+# Exposer les ports Laravel + Vite
+EXPOSE 8000 5173
 
-# Commande de lancement
-# Copier le script
-COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
-RUN chmod +x /usr/local/bin/docker-entrypoint.sh
-ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
+# Lancer à la fois Laravel backend ET Vite frontend
+CMD bash -c "php artisan key:generate && php artisan migrate --seed && php artisan serve --host=0.0.0.0 --port=8000 & npm run dev"
