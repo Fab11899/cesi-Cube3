@@ -62,7 +62,7 @@ jobs:
       run: minikube delete
     - name: Minikube start
       run: minikube start --driver=docker --ports=30000:30000,30001:30001
-    - name: Minikube apply pod
-      run: kubectl apply -f pod.yaml
     - name: Minikube apply service
       run: kubectl apply -f service.yaml
+    - name: Minikube apply pod
+      run: kubectl apply -f pod.yaml
