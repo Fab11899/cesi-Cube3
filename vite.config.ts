@@ -33,6 +33,6 @@ export default defineConfig({
         port: 5173,
         cors: true,
         strictPort: true,
-        origin: 'http://192.168.49.2:30001',
+        origin: 'localhost:30001',
     },
 });
