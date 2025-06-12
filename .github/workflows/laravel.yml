@@ -53,4 +53,16 @@ jobs:
       run: docker build -t letibodoh/breizhsport .
     - name: Docker push
       run: docker image push letibodoh/breizhsport
-    
+
+  minikube-deploy:
+    needs: build-docker
+    runs-on: self-hosted
+    steps:
+    - name: Minikube delete
+      run: minikube delete
+    - name: Minikube start
+      run: minikube start --driver=docker --ports=30000:30000,30001:30001
+    - name: Minikube apply pod
+      run: kubectl apply -f pod.yaml
+    - name: Minikube apply service
+      run: kubectl apply -f service.yaml
