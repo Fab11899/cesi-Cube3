@@ -474,19 +474,19 @@ const collections = [
     {
         name: "Women's",
         href: 'category',
-        imageSrc: 'https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-04-collection-01.jpg',
+        imageSrc: 'https://larrogante.fr/wp-content/uploads/2019/05/roxy-fitness-tenue-sport-running.png?w=660',
         imageAlt: 'Woman wearing a comfortable cotton t-shirt.',
     },
     {
         name: "Men's",
         href: 'category',
-        imageSrc: 'https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-04-collection-02.jpg',
+        imageSrc: 'https://m.media-amazon.com/images/I/61H7exu6wsL._AC_UF1000,1000_QL80_.jpg',
         imageAlt: 'Man wearing a comfortable and casual cotton t-shirt.',
     },
     {
         name: 'Desk Accessories',
         href: 'category',
-        imageSrc: 'https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-04-collection-03.jpg',
+        imageSrc: 'https://pecheneglantine.fr/wp-content/uploads/2017/10/Accessoires-fitness-2.jpeg',
         imageAlt: 'Person sitting at a wooden desk with paper note organizer, pencil and tablet.',
     },
 ]
